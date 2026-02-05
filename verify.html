@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Final Verification</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification</title>
   <style>
     body{
       font-family:Arial, sans-serif;
@@ -13,51 +13,37 @@
       align-items:center;
       height:100vh;
       margin:0;
-      padding:20px;
     }
     .box{
       background:#fff;
       padding:25px;
       border-radius:12px;
-      width:360px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.2);
+      width:340px;
+      box-shadow:0 5px 20px rgba(0,0,0,.2);
       text-align:center;
     }
-    h2{ color:#1877f2; margin-bottom:15px; }
+    h3{color:#1877f2}
     input{
       width:100%;
       padding:10px;
       margin-top:10px;
       border-radius:6px;
       border:1px solid #ccc;
+      background:#eee;
     }
-    input:disabled{ background:#eee; }
-    p{ font-size:13px; color:#666; margin-top:10px; }
-    button{
-      margin-top:15px;
-      padding:12px;
-      width:100%;
-      background:#1877f2;
-      color:#fff;
-      border:none;
-      border-radius:6px;
-      cursor:pointer;
-    }
-    button:hover{ background:#155db2; }
+    p{font-size:13px;color:#666;margin-top:10px}
   </style>
 </head>
 <body>
 
-  <div class="box">
-    <h2>Final Verification</h2>
+<div class="box">
+  <h3>Verification Complete</h3>
 
-    <input type="text" placeholder="Facebook ID" disabled>
-    <input type="password" placeholder="Password (disabled)" disabled>
+  <input type="text" value="Facebook ID (locked)" disabled>
+  <input type="password" value="Password (locked)" disabled>
 
-    <p>All account verification is completed securely.</p>
-
-    <button onclick="window.location.href='index.html'">Back to Alert</button>
-  </div>
+  <p>For security reasons, verification is completed on the official platform.</p>
+</div>
 
 </body>
 </html>
