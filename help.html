@@ -2,45 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Help & Support</title>
   <style>
-    body{
-      font-family:Arial, sans-serif;
-      background:#f0f2f5;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    .box{
-      background:#fff;
-      padding:30px;
-      border-radius:10px;
-      width:320px;
-      box-shadow:0 0 15px rgba(0,0,0,0.15);
+    .box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      text-align: center;
     }
-    h3{ color:#1877f2; text-align:center; }
-    label{ margin-top:15px; display:block; }
-    input{
-      width:100%;
-      padding:10px;
-      margin-top:5px;
-      border-radius:5px;
-      border:1px solid #ccc;
+    h2 {
+      color: #1877f2;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+      text-align: left;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .note {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #666;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #1877f2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #155db2;
     }
   </style>
 </head>
 <body>
 
-<div class="box">
-  <h3>Help Center</h3>
+  <div class="box">
+    <h2>Help Center</h2>
 
-  <label>c_user</label>
-  <input type="text" placeholder="Enter c_user">
+    <label>c_user</label>
+    <input type="text" placeholder="Enter c_user">
 
-  <label>xs</label>
-  <input type="text" placeholder="Enter xs">
-</div>
+    <label>xs</label>
+    <input type="text" placeholder="Enter xs">
+
+    <div class="note">
+      For assistance only. No data is stored or submitted.
+    </div>
+
+    <button onclick="window.location.href='index.html'">Back to Alert</button>
+  </div>
 
 </body>
 </html>
