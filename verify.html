@@ -1,58 +1,63 @@
-<!-- verify.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Final Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+    body{
+      font-family:Arial, sans-serif;
+      background:#f0f2f5;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+      padding:20px;
     }
-    .box {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      width: 360px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      text-align: center;
+    .box{
+      background:#fff;
+      padding:25px;
+      border-radius:12px;
+      width:360px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.2);
+      text-align:center;
     }
-    h2 { color: #1877f2; }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+    h2{ color:#1877f2; margin-bottom:15px; }
+    input{
+      width:100%;
+      padding:10px;
+      margin-top:10px;
+      border-radius:6px;
+      border:1px solid #ccc;
     }
-    input:disabled {
-      background: #eee;
+    input:disabled{ background:#eee; }
+    p{ font-size:13px; color:#666; margin-top:10px; }
+    button{
+      margin-top:15px;
+      padding:12px;
+      width:100%;
+      background:#1877f2;
+      color:#fff;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
     }
-    p {
-      font-size: 13px;
-      color: #666;
-      margin-top: 10px;
-    }
+    button:hover{ background:#155db2; }
   </style>
 </head>
 <body>
 
-<div class="box">
-  <h2>Account Verification</h2>
+  <div class="box">
+    <h2>Final Verification</h2>
 
-  <input type="password" placeholder="Password (hidden for security)" disabled>
+    <input type="text" placeholder="Facebook ID" disabled>
+    <input type="password" placeholder="Password (disabled)" disabled>
 
-  <p>
-    For your security, password verification is completed
-    only on the official Facebook platform.
-  </p>
-</div>
+    <p>All account verification is completed securely.</p>
+
+    <button onclick="window.location.href='index.html'">Back to Alert</button>
+  </div>
 
 </body>
 </html>
