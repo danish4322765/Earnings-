@@ -3,65 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Facebook Page Alert</title>
+  <title>Page Alert</title>
   <style>
-    body {
+    body{
       font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      background:#f0f2f5;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
     }
-    .alert-box {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      width: 350px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-      text-align: center;
+    .box{
+      background:#fff;
+      padding:30px;
+      border-radius:12px;
+      width:340px;
+      box-shadow:0 5px 20px rgba(0,0,0,.2);
+      text-align:center;
     }
-    h1 {
-      color: #1877f2;
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-    p {
-      color: #333;
-      font-size: 14px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #1877f2;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #155db2;
-    }
-    a {
-      display: block;
-      margin-top: 15px;
-      font-size: 12px;
-      color: #555;
-      text-decoration: none;
+    h2{color:#1877f2}
+    button{
+      margin-top:20px;
+      padding:12px;
+      width:100%;
+      background:#1877f2;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
     }
   </style>
 </head>
 <body>
-
-  <div class="alert-box">
-    <h1>Your Facebook Page Earnings Are at Risk</h1>
-    <p>Please review your page immediately to protect your bonus.</p>
-    <button onclick="window.location.href='help.html'">Review Now</button>
-    <a href="#">Ignore Alert</a>
+  <div class="box">
+    <h2>Your Facebook Page Earnings Are at Risk</h2>
+    <p>Please review your page to protect your bonus.</p>
+    <button onclick="location.href='help.html'">Review Now</button>
   </div>
-
 </body>
 </html>
