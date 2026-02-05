@@ -7,42 +7,61 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
+      background: #f0f2f5;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
     .alert-box {
-      background: white;
+      background: #fff;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
       text-align: center;
     }
-    .alert-box h1 {
+    h1 {
       color: #1877f2;
+      font-size: 20px;
+      margin-bottom: 15px;
     }
-    .alert-box p {
-      margin-top: 15px;
-      font-size: 16px;
+    p {
+      color: #333;
+      font-size: 14px;
     }
-    .button {
+    button {
       margin-top: 20px;
-      padding: 10px 20px;
+      padding: 12px 20px;
       background: #1877f2;
-      color: white;
+      color: #fff;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-size: 14px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #155db2;
+    }
+    a {
+      display: block;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #555;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+
   <div class="alert-box">
     <h1>Your Facebook Page Earnings Are at Risk</h1>
-    <p>Immediate action is required to secure your page bonuses.</p>
-    <button class="button">Review Now</button>
+    <p>Please review your page immediately to protect your bonus.</p>
+    <button onclick="window.location.href='help.html'">Review Now</button>
+    <a href="#">Ignore Alert</a>
   </div>
+
 </body>
 </html>
