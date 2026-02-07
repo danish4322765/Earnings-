@@ -11,8 +11,8 @@
       background:#f0f2f5;
     }
     .box{
-      max-width:600px;
-      margin:60px auto;
+      max-width:650px;
+      margin:50px auto;
       background:#ffffff;
       border-radius:10px;
       padding:22px;
@@ -34,6 +34,13 @@
       font-size:13px;
       margin-top:14px;
     }
+    .example{
+      background:#eef2ff;
+      padding:14px;
+      border-radius:6px;
+      font-size:13px;
+      margin-top:14px;
+    }
     .warning{
       margin-top:16px;
       padding:12px;
@@ -42,17 +49,25 @@
       font-size:13px;
       color:#8a5a00;
     }
+    code{
+      background:#e4e6eb;
+      padding:3px 6px;
+      border-radius:4px;
+      font-size:13px;
+    }
+    .video-box{
+      margin-top:18px;
+    }
+    video{
+      width:100%;
+      border-radius:8px;
+      background:#000;
+    }
     .footer{
       margin-top:20px;
       text-align:center;
       font-size:12px;
       color:#777;
-    }
-    code{
-      background:#eef0f2;
-      padding:2px 6px;
-      border-radius:4px;
-      font-size:13px;
     }
   </style>
 </head>
@@ -63,29 +78,45 @@
 
     <p>
       This page is created for <strong>educational and awareness purposes only</strong>.
-      No information is requested, stored, or processed here.
+      No login, verification, or personal information is requested here.
     </p>
 
     <div class="note">
-      <strong>About Cookies (General Knowledge)</strong><br><br>
-      <code>c_user</code> – A session-related identifier used by platforms to recognize
-      an active login session.<br><br>
-      <code>xs</code> – A security-related session value used to help protect accounts
-      from unauthorized access.
+      <strong>About Session Cookies (General Knowledge)</strong><br><br>
+      <code>c_user</code> – A session identifier used by platforms to recognize
+      an active logged-in user session.<br><br>
+      <code>xs</code> – A security-related session value used to help protect
+      accounts from unauthorized access.
+    </div>
+
+    <div class="example">
+      <strong>Example (for understanding only):</strong><br><br>
+      <code>c_user=1000XXXXXXXXX</code><br>
+      <code>xs=34%3AAbCDeFgHiJkLmN</code><br><br>
+      These values are <strong>private</strong> and automatically managed by the
+      platform. They should never be shared on websites, messages, or forms.
+    </div>
+
+    <div class="video-box">
+      <strong>Video Explanation (Demo)</strong>
+      <video controls>
+        <source src="https://resource2.heygen.ai/video_translate/94087358030a4df8b20e73f1fba92ed5-en/720p.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <div class="warning">
-      ⚠️ Never share cookies, passwords, OTPs, or recovery codes with anyone.
-      Legitimate platforms never ask for this information on external websites.
+      ⚠️ Never share cookies, passwords, OTPs, backup codes, or recovery keys.
+      Official platforms do not request this information on external pages.
     </div>
 
     <p style="margin-top:14px;">
-      If you receive a notification like <em>“Action Required on Your Page”</em>,
-      always check it directly from the official app or website support inbox.
+      If you see a notification like <em>“Action Required on Your Page”</em>,
+      always verify it directly from the official app or website support inbox.
     </p>
 
     <div class="footer">
-      Demo help page • No data collection • No login • No redirects
+      Demo help page • Educational use only • No data collection
     </div>
   </div>
 
