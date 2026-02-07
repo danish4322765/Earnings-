@@ -5,67 +5,75 @@
   <title>Action Required on Your Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      margin: 0;
+    body{
+      margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f0f2f5;
+      background:#f0f2f5;
     }
-    .card {
-      max-width: 520px;
-      margin: 60px auto;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      padding: 22px;
+    .card{
+      max-width:520px;
+      margin:60px auto;
+      background:#ffffff;
+      border-radius:10px;
+      padding:22px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
     }
-    .alert {
-      background: #fff4e5;
-      border-left: 5px solid #f7b928;
-      padding: 12px;
-      font-weight: bold;
-      color: #8a5a00;
-      margin-bottom: 16px;
+    .alert{
+      background:#fff4e5;
+      border-left:5px solid #f7b928;
+      padding:12px;
+      font-weight:bold;
+      color:#8a5a00;
+      margin-bottom:16px;
     }
-    h2 {
-      margin-top: 0;
-      color: #1c1e21;
+    h2{
+      margin-top:0;
+      color:#1c1e21;
     }
-    p {
-      color: #4b4f56;
-      font-size: 14px;
-      line-height: 1.6;
+    p{
+      color:#4b4f56;
+      font-size:14px;
+      line-height:1.6;
     }
-    .info {
-      background: #f5f6f7;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 13px;
-      margin-top: 14px;
+    .info{
+      background:#f5f6f7;
+      padding:12px;
+      border-radius:6px;
+      font-size:13px;
+      margin-top:14px;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 18px;
-      background: #1877f2;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
+    .btn{
+      display:inline-block;
+      margin-top:18px;
+      background:#1877f2;
+      color:#ffffff;
+      padding:10px 18px;
+      border-radius:6px;
+      text-decoration:none;
+      font-size:14px;
     }
-    .btn:hover {
-      background: #145dbf;
+    .btn:hover{
+      background:#145dbf;
     }
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #777;
-      text-align: center;
+    .link{
+      display:block;
+      margin-top:14px;
+      font-size:13px;
+      text-decoration:none;
+      color:#1877f2;
+    }
+    .footer{
+      margin-top:20px;
+      font-size:12px;
+      color:#777;
+      text-align:center;
     }
   </style>
 </head>
 <body>
 
   <div class="card">
+
     <div class="alert">
       Action Required on Your Page
     </div>
@@ -73,27 +81,31 @@
     <h2>Page Activity Notice</h2>
 
     <p>
-      We noticed unusual or policy-related activity associated with your page.
-      To avoid limitations, please review your recent activity and ensure it
-      follows platform guidelines.
+      We detected activity that may not fully align with platform policies.
+      To prevent possible limitations, we recommend reviewing your page
+      information and recent actions.
     </p>
 
     <div class="info">
-      • Page status may be limited temporarily  
-      <br>
-      • Monetization features could be affected  
-      <br>
+      • Temporary visibility limits may apply<br>
+      • Monetization features could be affected<br>
       • Review is recommended within 24 hours
     </div>
 
-    <!-- SAFE BUTTON (NO REDIRECT) -->
-    <a href="#" class="btn" onclick="alert('Demo only. No action is performed.')">
-      Review Page Activity
+    <!-- SAFE BUTTON -->
+    <a href="#" class="btn">
+      Review Page Status
+    </a>
+
+    <!-- HELP PAGE LINK (WORKING) -->
+    <a href="help.html" class="link">
+      Need help or more information?
     </a>
 
     <div class="footer">
-      This is a demo page for educational or UI testing purposes only.
+      Demo page only • No login • No data collection
     </div>
+
   </div>
 
 </body>
