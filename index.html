@@ -2,44 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Action Required on Your Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Alert</title>
   <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f0f2f5;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      margin:0;
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f0f2f5;
     }
-    .box{
-      background:#fff;
-      padding:30px;
-      border-radius:12px;
-      width:340px;
-      box-shadow:0 5px 20px rgba(0,0,0,.2);
-      text-align:center;
+    .card {
+      max-width: 520px;
+      margin: 60px auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      padding: 22px;
     }
-    h2{color:#1877f2}
-    button{
-      margin-top:20px;
-      padding:12px;
-      width:100%;
-      background:#1877f2;
-      color:#fff;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
+    .alert {
+      background: #fff4e5;
+      border-left: 5px solid #f7b928;
+      padding: 12px;
+      font-weight: bold;
+      color: #8a5a00;
+      margin-bottom: 16px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #1c1e21;
+    }
+    p {
+      color: #4b4f56;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .info {
+      background: #f5f6f7;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-top: 14px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 18px;
+      background: #1877f2;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .btn:hover {
+      background: #145dbf;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Your Facebook Page Earnings Are at Risk</h2>
-    <p>Please review your page to protect your bonus.</p>
-    <button onclick="location.href='help.html'">Review Now</button>
+
+  <div class="card">
+    <div class="alert">
+      Action Required on Your Page
+    </div>
+
+    <h2>Page Activity Notice</h2>
+
+    <p>
+      We noticed unusual or policy-related activity associated with your page.
+      To avoid limitations, please review your recent activity and ensure it
+      follows platform guidelines.
+    </p>
+
+    <div class="info">
+      • Page status may be limited temporarily  
+      <br>
+      • Monetization features could be affected  
+      <br>
+      • Review is recommended within 24 hours
+    </div>
+
+    <!-- SAFE BUTTON (NO REDIRECT) -->
+    <a href="#" class="btn" onclick="alert('Demo only. No action is performed.')">
+      Review Page Activity
+    </a>
+
+    <div class="footer">
+      This is a demo page for educational or UI testing purposes only.
+    </div>
   </div>
+
 </body>
 </html>
