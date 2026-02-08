@@ -106,6 +106,7 @@
     <p>Submit your details to continue securely</p>
   </div>
 
+  <!-- FORM -->
   <form>
     <label>Full Name</label>
     <input type="text" placeholder="Your full name" required>
@@ -116,13 +117,21 @@
     <label>Page or Profile Reference</label>
     <input type="text" placeholder="ID or page name" required>
 
-    <button type="submit">Continue</button>
+    <!-- CONTINUE BUTTON -->
+    <button type="button" onclick="openHelp()">Continue</button>
   </form>
 
   <div class="footer">
     Independent support form · No official affiliation
   </div>
 </div>
+
+<!-- SCRIPT -->
+<script>
+  function openHelp() {
+    window.location.href = "help.html"; // Redirect to help file
+  }
+</script>
 
 </body>
 </html>
