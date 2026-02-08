@@ -3,51 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Math Verification</title>
+<title>Drag Verification</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f7f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.box {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  text-align: center;
-}
-input { padding: 8px; width: 60px; }
-button { padding: 8px 15px; margin-left: 10px; }
+body { font-family: Arial; background: #eef2f3; display: flex; justify-content: center; align-items: center; height: 100vh; }
+.box { background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+#target { width: 100px; height: 100px; background: #1877f2; margin: 20px auto; }
+#piece { width: 50px; height: 50px; background: #28a745; cursor: grab; margin: 0 auto;}
 .status { margin-top: 15px; font-weight: bold; color: green; }
 </style>
 </head>
 <body>
 <div class="box">
-  <h2>Human Verification</h2>
-  <p>Solve: <span id="num1"></span> + <span id="num2"></span> = ?</p>
-  <input type="number" id="answer" />
-  <button id="verifyBtn">Verify</button>
-  <p class="status" id="status"></p>
+<h2>Drag Verification</h2>
+<p>Drag the green box into the blue box</p>
+<div id="target"></div>
+<div id="piece" draggable="true"></div>
+<p class="status" id="status"></p>
 </div>
 
 <script>
-const num1 = Math.floor(Math.random()*10 + 1);
-const num2 = Math.floor(Math.random()*10 + 1);
-document.getElementById('num1').textContent = num1;
-document.getElementById('num2').textContent = num2;
+const piece = document.getElementById('piece');
+const target = document.getElementById('target');
+const status = document.getElementById('status');
 
-document.getElementById('verifyBtn').onclick = () => {
-  const userAnswer = parseInt(document.getElementById('answer').value);
-  if(userAnswer === num1 + num2){
-    document.getElementById('status').textContent = "✅ Verified as human!";
-  } else {
-    document.getElementById('status').textContent = "❌ Try again!";
-  }
-};
+target.addEventListener('dragover', e => e.preventDefault());
+target.addEventListener('drop', e => {
+  status.textContent = "✅ Verified as human!";
+});
 </script>
 </body>
 </html>
