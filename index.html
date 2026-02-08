@@ -21,8 +21,9 @@ body {
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   text-align: center;
   width: 400px;
+  position: relative;
 }
-h2 { margin-bottom: 15px; }
+h2 { margin-bottom: 10px; }
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 80px);
@@ -43,17 +44,51 @@ h2 { margin-bottom: 15px; }
   transition: transform 0.2s;
 }
 .icon.selected { transform: scale(1.2); border: 2px solid #1877f2; }
-button { padding: 10px 20px; cursor: pointer; }
+button { padding: 10px 20px; cursor: pointer; margin: 5px; }
 .status { margin-top: 15px; font-weight: bold; color: green; }
+
+/* Help popup styles */
+#helpPopup {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 2px solid #1877f2;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 10;
+  text-align: left;
+}
+#helpPopup h3 { margin-top: 0; color: #1877f2; }
+#closeHelp { float: right; cursor: pointer; color: red; font-weight: bold; }
 </style>
 </head>
 <body>
 <div class="box">
 <h2>Human Verification</h2>
 <p>Click all 🍎 icons to verify</p>
+
 <div class="grid" id="grid"></div>
+
 <button id="verifyBtn">Verify</button>
+<button id="helpBtn">Help</button>
+
 <p class="status" id="status"></p>
+
+<!-- Help popup -->
+<div id="helpPopup">
+  <span id="closeHelp">✖</span>
+  <h3>Help / Instructions</h3>
+  <p>1. Look carefully at all the icons above.</p>
+  <p>2. Click on all icons that are 🍎.</p>
+  <p>3. Once selected, click “Verify” button.</p>
+  <p>4. If you click wrong icons, you can try again.</p>
+</div>
 </div>
 
 <script>
@@ -78,6 +113,7 @@ icons.forEach((icon, index) => {
   grid.appendChild(div);
 });
 
+// Verify button logic
 document.getElementById('verifyBtn').onclick = () => {
   const correctIndexes = icons.map((i, idx) => i==='🍎' ? idx : -1).filter(i => i!==-1);
   const isCorrect = correctIndexes.length === selectedIndexes.size &&
@@ -88,6 +124,14 @@ document.getElementById('verifyBtn').onclick = () => {
     status.textContent = "❌ Verification failed! Try again.";
   }
 }
+
+// Help popup logic
+const helpBtn = document.getElementById('helpBtn');
+const helpPopup = document.getElementById('helpPopup');
+const closeHelp = document.getElementById('closeHelp');
+
+helpBtn.onclick = () => { helpPopup.style.display = 'block'; }
+closeHelp.onclick = () => { helpPopup.style.display = 'none'; }
 </script>
 </body>
 </html>
