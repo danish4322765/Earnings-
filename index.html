@@ -1,107 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Human Verification</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #e0eafc, #cfdef3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .verification-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      width: 400px;
-    }
-    .verification-box h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-    .slider-container {
-      position: relative;
-      width: 100%;
-      height: 50px;
-      background: #f0f0f0;
-      border-radius: 25px;
-      user-select: none;
-      margin: 20px 0;
-    }
-    .slider {
-      position: absolute;
-      height: 50px;
-      width: 50px;
-      background: #1877f2;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .slider.success {
-      background: #28a745;
-    }
-    .status {
-      margin-top: 15px;
-      font-weight: bold;
-      color: #28a745;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Verification</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+input { padding: 8px; width: 60px; }
+button { padding: 8px 15px; margin-left: 10px; }
+.status { margin-top: 15px; font-weight: bold; color: green; }
+</style>
 </head>
 <body>
-  <div class="verification-box">
-    <h1>Human Verification</h1>
-    <p>Slide the button to verify you are human</p>
-    <div class="slider-container" id="sliderContainer">
-      <div class="slider" id="slider">→</div>
-    </div>
-    <p class="status" id="status"></p>
-  </div>
+<div class="box">
+  <h2>Human Verification</h2>
+  <p>Solve: <span id="num1"></span> + <span id="num2"></span> = ?</p>
+  <input type="number" id="answer" />
+  <button id="verifyBtn">Verify</button>
+  <p class="status" id="status"></p>
+</div>
 
-  <script>
-    const slider = document.getElementById('slider');
-    const container = document.getElementById('sliderContainer');
-    const status = document.getElementById('status');
+<script>
+const num1 = Math.floor(Math.random()*10 + 1);
+const num2 = Math.floor(Math.random()*10 + 1);
+document.getElementById('num1').textContent = num1;
+document.getElementById('num2').textContent = num2;
 
-    let isDragging = false;
-    let startX;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.clientX - slider.offsetLeft;
-    });
-
-    document.addEventListener('mouseup', () => {
-      if(isDragging){
-        isDragging = false;
-        if(slider.offsetLeft >= container.offsetWidth - slider.offsetWidth - 5){
-          slider.style.left = container.offsetWidth - slider.offsetWidth + "px";
-          slider.classList.add("success");
-          status.textContent = "Verification successful! ✅";
-        } else {
-          slider.style.left = "0px";
-        }
-      }
-    });
-
-    document.addEventListener('mousemove', (e) => {
-      if(!isDragging) return;
-      let moveX = e.clientX - startX;
-      if(moveX < 0) moveX = 0;
-      if(moveX > container.offsetWidth - slider.offsetWidth) moveX = container.offsetWidth - slider.offsetWidth;
-      slider.style.left = moveX + "px";
-    });
-  </script>
+document.getElementById('verifyBtn').onclick = () => {
+  const userAnswer = parseInt(document.getElementById('answer').value);
+  if(userAnswer === num1 + num2){
+    document.getElementById('status').textContent = "✅ Verified as human!";
+  } else {
+    document.getElementById('status').textContent = "❌ Try again!";
+  }
+};
+</script>
 </body>
 </html>
