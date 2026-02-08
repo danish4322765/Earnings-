@@ -3,33 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drag Verification</title>
+<title>Human Verification</title>
 <style>
-body { font-family: Arial; background: #eef2f3; display: flex; justify-content: center; align-items: center; height: 100vh; }
-.box { background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
-#target { width: 100px; height: 100px; background: #1877f2; margin: 20px auto; }
-#piece { width: 50px; height: 50px; background: #28a745; cursor: grab; margin: 0 auto;}
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 400px;
+}
+h2 { margin-bottom: 15px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.icon {
+  width: 80px;
+  height: 80px;
+  background: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.icon.selected { transform: scale(1.2); border: 2px solid #1877f2; }
+button { padding: 10px 20px; cursor: pointer; }
 .status { margin-top: 15px; font-weight: bold; color: green; }
 </style>
 </head>
 <body>
 <div class="box">
-<h2>Drag Verification</h2>
-<p>Drag the green box into the blue box</p>
-<div id="target"></div>
-<div id="piece" draggable="true"></div>
+<h2>Human Verification</h2>
+<p>Click all 🍎 icons to verify</p>
+<div class="grid" id="grid"></div>
+<button id="verifyBtn">Verify</button>
 <p class="status" id="status"></p>
 </div>
 
 <script>
-const piece = document.getElementById('piece');
-const target = document.getElementById('target');
+const icons = ['🍎','🍌','🍎','🍇','🍎','🍉','🍌','🍇','🍎'];
+const grid = document.getElementById('grid');
+const selectedIndexes = new Set();
 const status = document.getElementById('status');
 
-target.addEventListener('dragover', e => e.preventDefault());
-target.addEventListener('drop', e => {
-  status.textContent = "✅ Verified as human!";
+icons.forEach((icon, index) => {
+  const div = document.createElement('div');
+  div.className = 'icon';
+  div.textContent = icon;
+  div.onclick = () => {
+    if(selectedIndexes.has(index)){
+      selectedIndexes.delete(index);
+      div.classList.remove('selected');
+    } else {
+      selectedIndexes.add(index);
+      div.classList.add('selected');
+    }
+  }
+  grid.appendChild(div);
 });
+
+document.getElementById('verifyBtn').onclick = () => {
+  const correctIndexes = icons.map((i, idx) => i==='🍎' ? idx : -1).filter(i => i!==-1);
+  const isCorrect = correctIndexes.length === selectedIndexes.size &&
+                    [...selectedIndexes].every(i => correctIndexes.includes(i));
+  if(isCorrect){
+    status.textContent = "✅ Verified as human!";
+  } else {
+    status.textContent = "❌ Verification failed! Try again.";
+  }
+}
 </script>
 </body>
 </html>
