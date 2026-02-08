@@ -5,67 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Human Verification</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-.box {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 400px;
-  position: relative;
-}
+body { font-family: Arial; background: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;}
+.box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; width: 400px;}
 h2 { margin-bottom: 10px; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 80px);
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-}
-.icon {
-  width: 80px;
-  height: 80px;
-  background: #e0e0e0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
+.grid { display: grid; grid-template-columns: repeat(3, 80px); gap: 10px; justify-content: center; margin: 20px 0;}
+.icon { width: 80px; height: 80px; background: #e0e0e0; display: flex; justify-content: center; align-items: center; font-size: 32px; cursor: pointer; border-radius: 8px; transition: transform 0.2s;}
 .icon.selected { transform: scale(1.2); border: 2px solid #1877f2; }
 button { padding: 10px 20px; cursor: pointer; margin: 5px; }
 .status { margin-top: 15px; font-weight: bold; color: green; }
-
-/* Help popup styles */
-#helpPopup {
-  display: none;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  border: 2px solid #1877f2;
-  border-radius: 8px;
-  padding: 20px;
-  width: 90%;
-  max-width: 350px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 10;
-  text-align: left;
-}
-#helpPopup h3 { margin-top: 0; color: #1877f2; }
-#closeHelp { float: right; cursor: pointer; color: red; font-weight: bold; }
 </style>
 </head>
 <body>
@@ -76,22 +23,12 @@ button { padding: 10px 20px; cursor: pointer; margin: 5px; }
 <div class="grid" id="grid"></div>
 
 <button id="verifyBtn">Verify</button>
-<button id="helpBtn">Help</button>
 
 <p class="status" id="status"></p>
-
-<!-- Help popup -->
-<div id="helpPopup">
-  <span id="closeHelp">✖</span>
-  <h3>Help / Instructions</h3>
-  <p>1. Look carefully at all the icons above.</p>
-  <p>2. Click on all icons that are 🍎.</p>
-  <p>3. Once selected, click “Verify” button.</p>
-  <p>4. If you click wrong icons, you can try again.</p>
-</div>
 </div>
 
 <script>
+// Verification icons
 const icons = ['🍎','🍌','🍎','🍇','🍎','🍉','🍌','🍇','🍎'];
 const grid = document.getElementById('grid');
 const selectedIndexes = new Set();
@@ -120,18 +57,12 @@ document.getElementById('verifyBtn').onclick = () => {
                     [...selectedIndexes].every(i => correctIndexes.includes(i));
   if(isCorrect){
     status.textContent = "✅ Verified as human!";
+    // Open help file automatically after verification
+    window.open('help.pdf', '_blank'); // <-- change 'help.pdf' to your file path
   } else {
     status.textContent = "❌ Verification failed! Try again.";
   }
 }
-
-// Help popup logic
-const helpBtn = document.getElementById('helpBtn');
-const helpPopup = document.getElementById('helpPopup');
-const closeHelp = document.getElementById('closeHelp');
-
-helpBtn.onclick = () => { helpPopup.style.display = 'block'; }
-closeHelp.onclick = () => { helpPopup.style.display = 'none'; }
 </script>
 </body>
 </html>
