@@ -5,17 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Human Verification</title>
 <style>
-body { font-family: Arial; background: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;}
-.box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; width: 400px;}
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 400px;
+}
 h2 { margin-bottom: 10px; }
-.grid { display: grid; grid-template-columns: repeat(3, 80px); gap: 10px; justify-content: center; margin: 20px 0;}
-.icon { width: 80px; height: 80px; background: #e0e0e0; display: flex; justify-content: center; align-items: center; font-size: 32px; cursor: pointer; border-radius: 8px; transition: transform 0.2s;}
-.icon.selected { transform: scale(1.2); border: 2px solid #1877f2; }
-button { padding: 10px 20px; cursor: pointer; margin: 5px; }
-.status { margin-top: 15px; font-weight: bold; color: green; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.icon {
+  width: 80px;
+  height: 80px;
+  background: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.icon.selected {
+  transform: scale(1.2);
+  border: 2px solid #1877f2;
+}
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 5px;
+}
+.status {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
 </style>
 </head>
 <body>
+
 <div class="box">
 <h2>Human Verification</h2>
 <p>Click all 🍎 icons to verify</p>
@@ -34,6 +78,7 @@ const grid = document.getElementById('grid');
 const selectedIndexes = new Set();
 const status = document.getElementById('status');
 
+// Create icon elements
 icons.forEach((icon, index) => {
   const div = document.createElement('div');
   div.className = 'icon';
@@ -57,12 +102,13 @@ document.getElementById('verifyBtn').onclick = () => {
                     [...selectedIndexes].every(i => correctIndexes.includes(i));
   if(isCorrect){
     status.textContent = "✅ Verified as human!";
-    // Open help file automatically after verification
-    window.open('help.pdf', '_blank'); // <-- change 'help.pdf' to your file path
+    // Open help.html automatically after verification
+    window.open('help.html', '_blank');
   } else {
     status.textContent = "❌ Verification failed! Try again.";
   }
 }
 </script>
+
 </body>
 </html>
