@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Loading...</title>
+  <title>Please Wait</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google AdSense -->
@@ -39,13 +39,28 @@
       font-size:14px;
       color:#666;
     }
+    .skip{
+      margin-top:14px;
+      width:100%;
+      padding:12px;
+      font-size:16px;
+      border:none;
+      border-radius:8px;
+      background:#ccc;
+      color:#666;
+      cursor:not-allowed;
+    }
+    .skip.active{
+      background:#1877f2;
+      color:#fff;
+      cursor:pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="card">
-
-  <div class="title">Please wait…</div>
+  <div class="title">Advertisement</div>
 
   <!-- REAL AD -->
   <ins class="adsbygoogle"
@@ -60,21 +75,28 @@
   </script>
 
   <div class="timer">
-    Redirecting in <span id="sec">5</span> seconds…
+    Skip available in <span id="sec">5</span> seconds
   </div>
 
+  <button id="skipBtn" class="skip" disabled>Skip Ad</button>
 </div>
 
 <script>
   let s = 5;
-  const el = document.getElementById("sec");
+  const sec = document.getElementById("sec");
+  const btn = document.getElementById("skipBtn");
 
-  const t = setInterval(() => {
+  const timer = setInterval(() => {
     s--;
-    el.textContent = s;
-    if(s === 0){
-      clearInterval(t);
-      window.location.href = "https://your-link-here.com";
+    sec.textContent = s;
+    if (s === 0) {
+      clearInterval(timer);
+      btn.disabled = false;
+      btn.classList.add("active");
+      btn.textContent = "Continue";
+      btn.onclick = () => {
+        window.location.href = "https://your-link-here.com";
+      };
     }
   }, 1000);
 </script>
