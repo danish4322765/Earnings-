@@ -1,104 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Please Wait</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Please Wait</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google AdSense (TEST MODE) -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-  <style>
-    body{
-      margin:0;
-      font-family: system-ui, Arial, sans-serif;
-      background:#f0f2f5;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-    }
-    .card{
-      background:#fff;
-      width:100%;
-      max-width:380px;
-      padding:18px;
-      border-radius:14px;
-      box-shadow:0 6px 18px rgba(0,0,0,.15);
-      text-align:center;
-    }
-    .title{
-      font-size:16px;
-      margin-bottom:10px;
-      color:#333;
-    }
-    .timer{
-      margin-top:12px;
-      font-size:14px;
-      color:#666;
-    }
-    .skip{
-      margin-top:14px;
-      width:100%;
-      padding:12px;
-      font-size:16px;
-      border:none;
-      border-radius:8px;
-      background:#ccc;
-      color:#666;
-      cursor:not-allowed;
-    }
-    .skip.active{
-      background:#1877f2;
-      color:#fff;
-      cursor:pointer;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family: system-ui, Arial, sans-serif;
+  background:#e4e6eb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.card{
+  background:#fff;
+  width:100%;
+  max-width:400px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
+}
+.video video{
+  width:100%;
+  height:auto;
+}
+.content{
+  padding:12px;
+}
+.title{
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:4px;
+}
+.desc{
+  font-size:13px;
+  color:#555;
+}
+.timer{
+  margin-top:10px;
+  font-size:13px;
+  color:#666;
+}
+.skip{
+  margin-top:10px;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#ccc;
+  color:#666;
+  font-size:16px;
+}
+.skip.active{
+  background:#1877f2;
+  color:#fff;
+  cursor:pointer;
+}
+</style>
 </head>
+
 <body>
 
 <div class="card">
-  <div class="title">Advertisement</div>
 
-  <!-- REAL TEST AD -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-3940256099942544"
-       data-ad-slot="6300978111"
-       data-adtest="on"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-
-  <div class="timer">
-    Skip available in <span id="sec">5</span> seconds
+  <!-- VIDEO AD -->
+  <div class="video">
+    <video autoplay muted loop playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
   </div>
 
-  <button id="skipBtn" class="skip" disabled>Skip Ad</button>
+  <!-- TEXT LIKE AD -->
+  <div class="content">
+    <div class="title">Important Update Available</div>
+    <div class="desc">
+      Please review the details to continue safely.
+    </div>
+
+    <div class="timer">
+      Skip available in <span id="sec">5</span> seconds
+    </div>
+
+    <button id="skipBtn" class="skip" disabled>Skip</button>
+  </div>
+
 </div>
 
 <script>
-  let s = 5;
-  const sec = document.getElementById("sec");
-  const btn = document.getElementById("skipBtn");
+let s = 5;
+const sec = document.getElementById("sec");
+const btn = document.getElementById("skipBtn");
 
-  const timer = setInterval(() => {
-    s--;
-    sec.textContent = s;
-    if (s === 0) {
-      clearInterval(timer);
-      btn.disabled = false;
-      btn.classList.add("active");
-      btn.textContent = "Continue";
-      btn.onclick = () => {
-        window.location.href = "https://example.com";
-      };
+const t = setInterval(()=>{
+  s--;
+  sec.textContent = s;
+  if(s === 0){
+    clearInterval(t);
+    btn.disabled = false;
+    btn.classList.add("active");
+    btn.textContent = "Continue";
+    btn.onclick = ()=>{
+      window.location.href = "https://example.com";
     }
-  }, 1000);
+  }
+},1000);
 </script>
 
 </body>
