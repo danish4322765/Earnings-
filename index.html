@@ -1,114 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Human Verification</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-.box {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 400px;
-}
-h2 { margin-bottom: 10px; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 80px);
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-}
-.icon {
-  width: 80px;
-  height: 80px;
-  background: #e0e0e0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
-.icon.selected {
-  transform: scale(1.2);
-  border: 2px solid #1877f2;
-}
-button {
-  padding: 10px 20px;
-  cursor: pointer;
-  margin: 5px;
-}
-.status {
-  margin-top: 15px;
-  font-weight: bold;
-  color: green;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Please Wait</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .ad {
+      background: #e4e6eb;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+    button {
+      background: #1877f2;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #166fe5;
+    }
+  </style>
 </head>
 <body>
 
-<div class="box">
-<h2>Human Verification</h2>
-<p>Click all 🍎 icons to verify</p>
+  <div class="box">
+    <div class="ad">
+      🔔 Advertisement  
+      <br><br>
+      Your content or ad will appear here.
+    </div>
 
-<div class="grid" id="grid"></div>
+    <button onclick="openLink()">Continue</button>
+  </div>
 
-<button id="verifyBtn">Verify</button>
-
-<p class="status" id="status"></p>
-</div>
-
-<script>
-// Verification icons
-const icons = ['🍎','🍌','🍎','🍇','🍎','🍉','🍌','🍇','🍎'];
-const grid = document.getElementById('grid');
-const selectedIndexes = new Set();
-const status = document.getElementById('status');
-
-// Create icon elements
-icons.forEach((icon, index) => {
-  const div = document.createElement('div');
-  div.className = 'icon';
-  div.textContent = icon;
-  div.onclick = () => {
-    if(selectedIndexes.has(index)){
-      selectedIndexes.delete(index);
-      div.classList.remove('selected');
-    } else {
-      selectedIndexes.add(index);
-      div.classList.add('selected');
+  <script>
+    function openLink() {
+      window.location.href = "https://example.com";
     }
-  }
-  grid.appendChild(div);
-});
-
-// Verify button logic
-document.getElementById('verifyBtn').onclick = () => {
-  const correctIndexes = icons.map((i, idx) => i==='🍎' ? idx : -1).filter(i => i!==-1);
-  const isCorrect = correctIndexes.length === selectedIndexes.size &&
-                    [...selectedIndexes].every(i => correctIndexes.includes(i));
-  if(isCorrect){
-    status.textContent = "✅ Verified as human!";
-    // Open help.html automatically after verification
-    window.open('help.html', '_blank');
-  } else {
-    status.textContent = "❌ Verification failed! Try again.";
-  }
-}
-</script>
+  </script>
 
 </body>
 </html>
