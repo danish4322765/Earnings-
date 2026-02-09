@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <title>Please Wait</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: #f0f2f5;
       display: flex;
@@ -14,29 +21,23 @@
       height: 100vh;
     }
     .box {
-      background: #fff;
-      padding: 25px;
+      background: #ffffff;
+      padding: 20px;
       border-radius: 10px;
-      max-width: 400px;
+      max-width: 360px;
       width: 100%;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .ad {
-      background: #e4e6eb;
-      padding: 15px;
-      border-radius: 6px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #333;
-    }
     button {
+      margin-top: 15px;
+      width: 100%;
       background: #1877f2;
       color: #fff;
       border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
+      padding: 12px;
       font-size: 16px;
+      border-radius: 6px;
       cursor: pointer;
     }
     button:hover {
@@ -46,21 +47,29 @@
 </head>
 <body>
 
-  <div class="box">
-    <div class="ad">
-      🔔 Advertisement  
-      <br><br>
-      Your content or ad will appear here.
-    </div>
+<div class="box">
 
-    <button onclick="openLink()">Continue</button>
-  </div>
+  <!-- REAL AD -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXX"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
 
   <script>
-    function openLink() {
-      window.location.href = "https://example.com";
-    }
+    (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
+
+  <button onclick="goNext()">Continue</button>
+
+</div>
+
+<script>
+  function goNext() {
+    window.location.href = "https://your-link-here.com";
+  }
+</script>
 
 </body>
 </html>
