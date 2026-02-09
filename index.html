@@ -5,41 +5,36 @@
   <title>Please Wait</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google AdSense -->
+  <!-- Google AdSense TEST AD (REAL & SAFE) -->
   <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3940256099942544"
     crossorigin="anonymous"></script>
 
   <style>
     body{
       margin:0;
-      font-family: system-ui, Arial, sans-serif;
+      font-family: Arial, sans-serif;
       background:#f0f2f5;
       display:flex;
       justify-content:center;
       align-items:center;
       height:100vh;
     }
-    .card{
+    .box{
       background:#fff;
       width:100%;
-      max-width:380px;
+      max-width:360px;
       padding:18px;
-      border-radius:14px;
-      box-shadow:0 6px 18px rgba(0,0,0,.15);
+      border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,.15);
       text-align:center;
     }
-    .title{
-      font-size:16px;
-      margin-bottom:10px;
-      color:#333;
-    }
     .timer{
-      margin-top:12px;
-      font-size:14px;
+      margin-top:10px;
       color:#666;
+      font-size:14px;
     }
-    .skip{
+    button{
       margin-top:14px;
       width:100%;
       padding:12px;
@@ -50,7 +45,7 @@
       color:#666;
       cursor:not-allowed;
     }
-    .skip.active{
+    button.active{
       background:#1877f2;
       color:#fff;
       cursor:pointer;
@@ -59,14 +54,14 @@
 </head>
 <body>
 
-<div class="card">
-  <div class="title">Advertisement</div>
+<div class="box">
 
-  <!-- REAL AD -->
+  <!-- REAL TEST AD -->
   <ins class="adsbygoogle"
        style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXX"
-       data-ad-slot="1234567890"
+       data-ad-client="ca-pub-3940256099942544"
+       data-ad-slot="6300978111"
+       data-adtest="on"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
 
@@ -78,27 +73,28 @@
     Skip available in <span id="sec">5</span> seconds
   </div>
 
-  <button id="skipBtn" class="skip" disabled>Skip Ad</button>
+  <button id="skip" disabled>Skip Ad</button>
+
 </div>
 
 <script>
   let s = 5;
   const sec = document.getElementById("sec");
-  const btn = document.getElementById("skipBtn");
+  const btn = document.getElementById("skip");
 
-  const timer = setInterval(() => {
+  const t = setInterval(()=>{
     s--;
     sec.textContent = s;
-    if (s === 0) {
-      clearInterval(timer);
+    if(s === 0){
+      clearInterval(t);
       btn.disabled = false;
       btn.classList.add("active");
       btn.textContent = "Continue";
       btn.onclick = () => {
-        window.location.href = "https://your-link-here.com";
+        window.location.href = "https://example.com";
       };
     }
-  }, 1000);
+  },1000);
 </script>
 
 </body>
